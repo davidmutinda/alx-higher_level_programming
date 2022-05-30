@@ -18,8 +18,10 @@ int check_cycle(listint_t *list)
 		{
 			if (temp == list && list != head)
 				break;
+
 			else if (list->next == temp)
 				return (1);
+
 			temp = temp->next;
 		}
 		temp = head;
