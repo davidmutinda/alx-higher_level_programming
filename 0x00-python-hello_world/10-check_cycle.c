@@ -18,7 +18,7 @@ int check_cycle(listint_t *list)
 		{
 			if (temp->next == NULL)
 				return (0);
-			if (temp == list)
+			else if (temp == list)
 				break;
 			else if (list->next == temp)
 				return (1);
