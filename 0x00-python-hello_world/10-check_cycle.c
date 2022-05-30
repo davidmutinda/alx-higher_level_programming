@@ -16,7 +16,7 @@ int check_cycle(listint_t *list)
 	{
 		while (1)
 		{
-			if (temp->next == NULL)
+			if (list->next == NULL)
 				return (0);
 			else if (temp == list)
 				break;
