@@ -8,15 +8,19 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *head = list;
-	listint_t *prev = list;
+	listint_t *temp = list;
 
 	if (list == NULL)
 		return (0);
 	while (list->next != NULL)
 	{
-		if (list->next == head || list->next == prev)
-			return (1);
-		prev = list;
+		while (temp != NULL)
+		{
+			if (list->next == temp)
+				return (1);
+			temp = temp->next;
+		}
+		temp = head;
 		list = list->next;
 	}
 	return (0);
