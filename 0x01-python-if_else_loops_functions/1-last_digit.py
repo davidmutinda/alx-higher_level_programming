@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
+if type(number) == str:
+    print("TypeError")
+    quit()
 string = str(number)
 lastDigit = int(string[-1])
 if number < 0:
