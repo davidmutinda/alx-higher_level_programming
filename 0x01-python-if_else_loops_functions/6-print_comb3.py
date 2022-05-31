@@ -4,6 +4,5 @@ for i in range(0, 89):
         i += 1
         continue
     print("{}".format('0' + str(i) if i < 10 else i), end=", ")
-    i += 1
 
 print("{}".format(i))
