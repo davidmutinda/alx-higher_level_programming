@@ -21,7 +21,7 @@ listint_t *insert_node(listint_t **head, int number)
 		new->next = ptr;
 		return (new);
 	}
-	while (ptr->next != NULL)
+	while (ptr != NULL)
 	{
 		if (ptr->n >= number)
 		{
@@ -33,7 +33,7 @@ listint_t *insert_node(listint_t **head, int number)
 		prev = ptr;
 		ptr = ptr->next;
 	}
-	ptr->next = new;
+	prev->next = new;
 	new->n = number;
 	new->next = NULL;
 	return (new);
