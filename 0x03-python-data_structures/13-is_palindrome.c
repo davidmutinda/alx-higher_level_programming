@@ -37,7 +37,9 @@ int is_palindrome(listint_t **head)
 		if (rev->n != ptr->n)
 			return (0);
 		ptr = ptr->next;
+		hld = rev;
 		rev = rev->next;
+		free(hld);
 	}
 	return (1);
 }
