@@ -13,7 +13,7 @@ int is_palindrome(listint_t **head)
 
 	if (*head == NULL)
 	{
-		return (0);
+		return (1);
 	}
 	rev = malloc(sizeof(listint_t));
 	hld = rev;
