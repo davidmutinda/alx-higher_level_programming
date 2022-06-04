@@ -9,6 +9,7 @@ int is_palindrome(listint_t **head)
 	listint_t *ptr = *head;
 	listint_t *rev;
 	listint_t *hld;
+	int n;
 
 	if (*head == NULL)
 	{
@@ -31,14 +32,16 @@ int is_palindrome(listint_t **head)
 	free(rev);
 	ptr = *head;
 	rev = hld;
+	n = 1;
 
 	while (ptr != NULL)
 	{
 		if (rev->n != ptr->n)
-			return (0);
+			n = 0;
 		ptr = ptr->next;
 		hld = rev;
 		rev = rev->next;
+		free(hld);
 	}
-	return (1);
+	return (n);
 }
