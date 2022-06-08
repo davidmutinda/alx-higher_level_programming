@@ -2,10 +2,11 @@
 def square_matrix_simple(matrix=[]):
     if not matrix:
         return
-    new_matrix = [[], [], []]
-    j = 0
+    new_matrix = []
     for row in matrix:
+        row_matrix = []
         for i in range(len(matrix)):
-            new_matrix[j].append(row[i] ** 2)
-        j += 1
+            row_matrix.append(row[i] ** 2)
+        new_matrix.append(row_matrix)
+
     return new_matrix
