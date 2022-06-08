@@ -1,2 +1,2 @@
 # alx-higher_level_programming
-Tasks using python to solve problems.
+Solving tasks using Python and Javascript.
