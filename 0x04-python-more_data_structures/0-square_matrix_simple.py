@@ -4,6 +4,8 @@ def power(value):
 
 
 def square_matrix_simple(matrix=[]):
+    if not matrix:
+        return
     new_matrix = [[], [], []]
     j = 0
     for row in matrix:
