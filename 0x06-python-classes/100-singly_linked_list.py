@@ -45,7 +45,7 @@ class SinglyLinkedList:
     def __repr__(self):
         ptr = self.__head
         txt = ''
-        while True:
+        while ptr:
             txt += str(ptr.data)
             if ptr.next_node is None:
                 break
