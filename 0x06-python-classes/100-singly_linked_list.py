@@ -47,11 +47,11 @@ class SinglyLinkedList:
         txt = ''
         while True:
             txt += str(ptr.data)
-            ptr = ptr.next_node
             if ptr.next_node is None:
                 break
             else:
                 txt += '\n'
+            ptr = ptr.next_node
         return txt
 
     def sorted_insert(self, value):
