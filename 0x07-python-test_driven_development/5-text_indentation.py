@@ -1,9 +1,24 @@
 #!/usr/bin/python3
 """
+This module defines `text_indentation`
+The function indents and prints text
 """
 
 
 def text_indentation(text):
+    """
+    indents and prints text
+
+    Args:
+        text(str): string to be indented and printed
+
+    Raises:
+       TypeError: text must be a string
+
+    Returns:
+        doesn't return
+    """
+
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     i = 0
