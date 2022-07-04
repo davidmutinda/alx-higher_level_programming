@@ -46,4 +46,12 @@ now use it:
         ---
     TypeError: name must be an integer
 
-    >>> bg.integer_validator(10, 20)
+    >>> bg.integer_validator("name", None)
+    Traceback (most recent call last):
+        ---
+    TypeError: name must be an integer
+
+    >>> bg.integer_validator(None)
+    Traceback (most recent call last):
+        ---
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
