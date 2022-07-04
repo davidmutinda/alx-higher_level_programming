@@ -56,7 +56,7 @@ now use it:
         ---
     TypeError: name must be an integer
 
-    >>> bg.area()
+    >>> bg.integer_validator("name", True)
     Traceback (most recent call last):
         ---
-    Exception: area() is not implemented
+    TypeError: name must be an integer
