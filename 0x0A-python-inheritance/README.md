@@ -1,0 +1,1 @@
+Class inheritance in python
