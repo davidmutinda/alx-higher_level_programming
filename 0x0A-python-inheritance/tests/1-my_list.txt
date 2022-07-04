@@ -44,3 +44,15 @@ Now use it:
 
     >>> b.print_sorted()
     [-2, 0, 3, 4]
+
+    >>> c = MyList()
+    >>> c.append('D')
+    >>> c.append('a')
+    >>> c.append('v')
+    >>> c.append('i')
+    >>> c.append('d')
+    >>> c
+    ['D', 'a', 'v', 'i', 'd']
+
+    >>> c.print_sorted()
+    ['D', 'a', 'd', 'i', 'v']
