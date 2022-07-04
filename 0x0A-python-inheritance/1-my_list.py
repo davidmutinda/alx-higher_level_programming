@@ -8,8 +8,5 @@ class MyList(list):
     """
     This class inherits from MyList
     """
-    def __init__(self):
-        pass
-
     def print_sorted(self):
         print(sorted(self))
