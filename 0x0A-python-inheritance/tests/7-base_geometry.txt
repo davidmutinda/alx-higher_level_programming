@@ -3,6 +3,11 @@ Import 'BaseGeometry' from '7-base_geometry':
 
 now use it:
     >>> bg = BaseGeometry()
+
+    >>> cg = BaseGeometry(None)
+    Traceback (most recent call last):
+    TypeError: BaseGeometry() takes no arguments
+
     >>> bg.integer_validator("name", "John")
     Traceback (most recent call last):
         ---
