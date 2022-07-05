@@ -22,4 +22,5 @@ class Student:
             for key, value in self.__dict__.items():
                 if key == i:
                     new_dict[key] = value
-        return new_dict
+        if len(new_dict):
+            return new_dict
