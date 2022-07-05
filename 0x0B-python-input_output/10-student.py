@@ -24,3 +24,5 @@ class Student:
                     new_dict[key] = value
         if len(new_dict):
             return new_dict
+        else:
+            return self.__dict__
