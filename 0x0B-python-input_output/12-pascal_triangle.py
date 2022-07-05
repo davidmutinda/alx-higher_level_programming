@@ -20,7 +20,6 @@ def pascal_triangle(n):
         for k in range(i + 1):
             if not k or k == i:
                 col.append(1)
-
             else:
                 col.append(new_list[i - 1][k] + new_list[i - 1][k - 1])
         new_list.append(col)
