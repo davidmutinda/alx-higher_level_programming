@@ -56,3 +56,7 @@ Now use it:
 
     >>> c.print_sorted()
     ['D', 'a', 'd', 'i', 'v']
+
+    >>> d = MyList()
+    >>> d.print_sorted()
+    []
