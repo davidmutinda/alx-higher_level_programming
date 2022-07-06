@@ -18,7 +18,6 @@ def append_after(filename="", search_string="", new_string=""):
         k = 0
 
         while k < len(contents):
-            print(k)
             if search_string in contents[k]:
                 contents.insert(k + 1, new_string)
             k += 1
