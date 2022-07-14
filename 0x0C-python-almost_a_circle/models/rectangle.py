@@ -18,23 +18,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def check_for_error(self, name, value, status=False):
-        """
-        Checks if there is an error
-        """
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-
-        elif not status:
-            if value < 0:
-                raise ValueError("{} must be >= 0".format(name))
-
-        elif value < 1:
-            raise ValueError("{} must be > 0".format(name))
-
-    # def area(self):
-        # return self.__width * self.__height
-
     @property
     def width(self):
         """
@@ -106,3 +89,6 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        return self.__width * self.__height
