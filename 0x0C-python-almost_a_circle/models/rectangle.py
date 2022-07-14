@@ -13,16 +13,10 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-
-        self.check_for_error("width", width, True)
-        self.check_for_error("height", height, True)
-        self.check_for_error("x", x)
-        self.check_for_error("y", y)
-
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     def check_for_error(self, name, value, status=False):
         if not isinstance(value, int):
