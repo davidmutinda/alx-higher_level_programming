@@ -19,6 +19,9 @@ class Rectangle(Base):
         self.y = y
 
     def check_for_error(self, name, value, status=False):
+        """
+        Checks if there is an error
+        """
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
 
