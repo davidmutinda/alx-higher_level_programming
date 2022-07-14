@@ -37,3 +37,10 @@ class Base:
 
             list_t = cls.to_json_string(list_new)
             f.write(list_t)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns list of JSON string"""
+        if not json_string:
+            return list()
+        return json.loads(json_string)
