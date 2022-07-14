@@ -20,6 +20,15 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}"\
             .format(self.id, self.x, self.y, self.width)
 
+    @property
+    def size(self):
+        return self.__height
+
+    @size.setter
+    def size(self, value):
+        self.__width = value
+        self.__height = value
+
     def update(self, *args, **kwargs):
         """Assigns attributes"""
         if not args:
@@ -31,8 +40,7 @@ class Square(Rectangle):
                 if not i:
                     self.id = arg
                 elif i == 1:
-                    self.width = arg
-                    self.height = arg
+                    self.size = arg
                 elif i == 2:
                     self.x = arg
                 elif i == 3:
