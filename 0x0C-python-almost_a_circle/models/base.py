@@ -60,11 +60,12 @@ class Base:
         """returns list of instances"""
         filename = cls.__name__ + ".json"
         ret = list()
-        with open(filename, 'r', encoding="utf-8") as f:
-            hld = f.read()
-            news = cls.from_json_string(hld)
-
-            for new in news:
-                ret.append(cls.create(**new))
-
-        return ret
+        try:
+            with open(filename, 'r', encoding="utf-8") as f:
+                hld = f.read()
+                news = cls.from_json_string(hld)
+                for new in news:
+                    ret.append(cls.create(**new))
+            return ret
+        except Exception:
+            return ret
