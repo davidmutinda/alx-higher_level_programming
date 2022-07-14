@@ -19,3 +19,22 @@ class Square(Rectangle):
         """The str method"""
         return "[Square] ({}) {}/{} - {}"\
             .format(self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """Assigns attributes"""
+        if not args:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        elif args:
+            i = 0
+            for arg in args:
+                if not i:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                    self.height = arg
+                elif i == 2:
+                    self.x = arg
+                elif i == 3:
+                    self.y = arg
+                i += 1
