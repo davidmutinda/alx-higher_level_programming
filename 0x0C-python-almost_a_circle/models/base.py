@@ -3,6 +3,7 @@
 This module contains class Base
 """
 import json
+import csv
 
 
 class Base:
@@ -69,3 +70,36 @@ class Base:
             return ret
         except Exception:
             return ret
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes a json to csv"""
+        filename = str(cls.__name__) + ".csv"
+        with open(filename, "w", newline="") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                for o in list_objs:
+                    writer.writerow(o.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """return a list of class instances from.a csv file"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as f:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(f, fieldnames=fieldnames)
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                              for d in list_dicts]
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
