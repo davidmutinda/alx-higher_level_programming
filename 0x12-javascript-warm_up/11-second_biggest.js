@@ -2,7 +2,9 @@
 
 let array = process.argv;
 
-if (array.length < 4) {
+if (array.length === 2) {
+  console.log(0);
+} else if (array.length === 3) {
   console.log(0);
 } else {
   array = array.splice(2);
