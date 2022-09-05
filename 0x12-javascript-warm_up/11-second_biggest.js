@@ -1,11 +1,13 @@
 #!/usr/bin/node
 
-const array = process.argv;
-const i = array.length;
+let array = process.argv;
 
 if (array.length < 4) {
   console.log(0);
 } else {
+  array = array.splice(2);
+  array = array.map(Number);
+  const i = array.length;
   array.sort();
-  console.log(parseInt(array[i - 2]));
+  console.log(array[i - 2]);
 }
