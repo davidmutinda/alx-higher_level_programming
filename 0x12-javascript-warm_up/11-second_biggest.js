@@ -10,6 +10,6 @@ if (array.length === 2) {
   array = array.splice(2);
   array = array.map(Number);
   const i = array.length;
-  array.sort();
+  array.sort((a, b) => a - b);
   console.log(array[i - 2]);
 }
