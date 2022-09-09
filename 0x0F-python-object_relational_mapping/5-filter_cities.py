@@ -12,14 +12,15 @@ if __name__ == "__main__":
                          passwd=argv[2],
                          db=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT name FROM cities\
-                WHERE cities.state_id = (\
-                SELECT id FROM states\
-                WHERE name ='{}')\
-                ORDER BY cities.id".format(argv[4]))
+    cur.execute("SELECT * FROM cities\
+                INNER JOIN states\
+                ON states.id = cities.state_id\
+                ORDER BY cities.id")
     rows = cur.fetchall()
-    for count, row in enumerate(rows):
-        if count < len(rows) - 1:
-            print(row[0], end=", ")
-        else:
-            print(row[0])
+    string = ""
+    for row in rows:
+        if row[4] == argv[4]:
+            string += row[2] + ', '
+
+    string = string[:-2]
+    print(string)
