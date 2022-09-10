@@ -17,3 +17,5 @@ if __name__ == "__main__":
     new_object = State(name='Louisiana')
     session.add(new_object)
     session.commit()
+    for state in session.query(State).filter(State.name == 'Louisiana'):
+        print(state.id)
