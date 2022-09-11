@@ -9,9 +9,7 @@ from relationship_city import Base
 
 
 class State(Base):
-    """
-    Creates user table
-    """
+    """Creates State table"""
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, nullable=False)
