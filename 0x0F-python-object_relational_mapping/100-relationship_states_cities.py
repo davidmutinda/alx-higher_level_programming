@@ -14,7 +14,6 @@ if __name__ == "__main__":
                            .format(argv[1], argv[2], argv[3]),
                            pool_pre_ping=True)
 
-    City.state = relationship('State', back_populates='cities')
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
@@ -22,5 +21,5 @@ if __name__ == "__main__":
 
     new_state = State(name='Carlifonia')
     session.add(new_state)
-    new_state.cities.append(City(name='San Francisco'))
+    new_state.cities = [City(name='San Francisco')]
     session.commit()
