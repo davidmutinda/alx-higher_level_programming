@@ -9,4 +9,4 @@ from sys import argv
 
 data = {"email": argv[2]}
 r = requests.post(argv[1], data)
-print(r.content.decode('utf-8'))
+print(r.content)
