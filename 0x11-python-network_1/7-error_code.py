@@ -8,8 +8,8 @@ import requests
 
 
 if __name__ == "__main__":
-    try:
-        req = requests.get(argv[1], auth=('user', 'pass'))
-        print(req.read().decode('utf-8'))
-    except Exception as e:
-        print('Error code:', e)
+    req = requests.get(argv[1])
+    if req.status_code >= 400:
+        print(f'Error code: {req.status_code}')
+    else:
+        print(req.text)
