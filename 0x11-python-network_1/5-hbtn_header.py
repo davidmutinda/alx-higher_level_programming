@@ -6,5 +6,6 @@ the value of the variable "X-Request-Id" in the response header
 import requests
 from sys import argv
 
-r = requests.get('https://alx-intranet.hbtn.io/status')
-print(dict(r.headers).get('X-Request-Id'))
+if __name__ == "__main__":
+    r = requests.get('https://alx-intranet.hbtn.io/status')
+    print(dict(r.headers).get('X-Request-Id'))
