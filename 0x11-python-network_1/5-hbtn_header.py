@@ -7,5 +7,5 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    r = requests.get('https://alx-intranet.hbtn.io/status')
+    r = requests.get('https://alx-intranet.hbtn.io/status', auth=('user', 'pass'))
     print(dict(r.headers).get('X-Request-Id'))
