@@ -10,6 +10,6 @@ import requests
 if __name__ == "__main__":
     try:
         req = requests.get(argv[1], auth=('user', 'pass'))
-        print(req.content.decode('utf-8'))
+        print(req.read().decode('utf-8'))
     except Exception as e:
         print('Error code:', e.code)
