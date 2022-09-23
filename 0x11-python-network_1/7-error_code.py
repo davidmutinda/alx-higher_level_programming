@@ -12,4 +12,4 @@ if __name__ == "__main__":
         req = requests.get(argv[1], auth=('user', 'pass'))
         print(req.read().decode('utf-8'))
     except Exception as e:
-        print('Error code:', e.code)
+        print('Error code:', e)
