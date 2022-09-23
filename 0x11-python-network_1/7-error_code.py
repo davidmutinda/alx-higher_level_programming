@@ -4,7 +4,7 @@ This script takes in a URL, sends a request to the URL and displays the body
 of the response (decoded in utf-8)
 """
 from sys import argv
-import response
+import requests
 
 
 if __name__ == "__main__":
