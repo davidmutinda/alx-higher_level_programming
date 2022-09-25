@@ -13,4 +13,4 @@ if __name__ == "__main__":
     for count, r in enumerate(req.json()):
         if count == 10:
             break
-        print(r.get('sha'), r.get('commit').get('author').get('name'))
+        print(f"{r.get('sha')}:", r.get('commit').get('author').get('name'))
