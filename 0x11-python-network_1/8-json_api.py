@@ -7,10 +7,10 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    if argv[1]:
+    try:
         data = {'q': argv[1]}
-    else:
+    except as Exception:
         data = {'q': ""}
     req = requests.post('http://0.0.0.0:5000/search_user', data)
 
-    print(dir(req))
+    print(req.json)
