@@ -9,7 +9,7 @@ from sys import argv
 if __name__ == "__main__":
     try:
         data = {'q': argv[1]}
-    except as Exception:
+    except Exception:
         data = {'q': ""}
     req = requests.post('http://0.0.0.0:5000/search_user', data)
 
