@@ -13,4 +13,8 @@ if __name__ == "__main__":
         data = {'q': ""}
     req = requests.post('http://0.0.0.0:5000/search_user', data)
 
-    print(req.json)
+    if req.json():
+        print(f"[req.json().id] (req.json().name)")
+
+    else:
+        print("No result")
