@@ -4,6 +4,21 @@ Module contains find_peak()
 """
 
 
+def recurse_peak(array, mid):
+    """
+    Recurses list to find peak
+    """
+    try:
+        if array[mid] > array[mid + 1] and array[mid] > array[mid - 1]:
+            return array[mid]
+        if array[mid + 1] > array[mid]:
+            return recurse_peak(array, mid + 1)
+        if array[mid - 1] > array[mid]:
+            return recurse_peak(array, mid - 1)
+    except Exception:
+        pass
+
+
 def find_peak(list_of_integers):
     """
      finds a peak in a list of unsorted integers
@@ -18,14 +33,9 @@ def find_peak(list_of_integers):
         peak = array[0]
     if array[-1] >= array[-2]:
         peak = array[-1]
-    for count, item in enumerate(array):
-        try:
-            if item >= array[count - 1] and item >= array[count + 1]:
-                if not peak:
-                    peak = item
-                if item > peak:
-                    peak = item
-        except Exception:
-            pass
+
+    new_peak = recurse_peak(array, (len(array) - 1) // 2)
+    if new_peak:
+        peak = new_peak
 
     return peak
